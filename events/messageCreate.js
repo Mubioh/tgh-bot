@@ -9,9 +9,7 @@ module.exports = {
 		if (message.channel.type === ChannelType.GuildAnnouncement && message.crosspostable)
 			message.crosspost();
 		for (const id of commentEnabledChannelIds) {
-			if (message.channel.id === id) {
-				await message.startThread({ name: 'Comments' });
-			}
+			if (message.channel.id === id) await message.startThread({ name: 'Comments' });
 		}
 	},
 };
