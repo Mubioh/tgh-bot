@@ -1,4 +1,5 @@
 const { Events, InteractionType } = require('discord.js');
+const guideHandler = require('../interactions/guideHandler');
 const rulesHandler = require('../interactions/rulesHandler');
 
 module.exports = {
@@ -8,6 +9,8 @@ module.exports = {
 			try {
 				if (interaction.customId === 'rules_button')
 					return rulesHandler.handleInteraction(interaction);
+				if (interaction.customId.startsWith('get_started'))
+					return guideHandler.handleInteraction(interaction);
 			} catch (error) {
 				console.error(error);
 				await interaction.reply({
