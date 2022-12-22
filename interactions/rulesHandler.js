@@ -1,4 +1,4 @@
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
 	handleInteraction: async (interaction) => {
@@ -8,17 +8,6 @@ module.exports = {
 			)
 			.setColor('2F3136');
 
-		const buttons = new ActionRowBuilder().addComponents([
-            new ButtonBuilder()
-				.setURL('https://discord.com/terms')
-				.setLabel('Discord Terms of Service')
-				.setStyle(ButtonStyle.Link),
-			new ButtonBuilder()
-				.setURL('https://discord.com/guidelines')
-				.setLabel('Discord Community Guidelines')
-				.setStyle(ButtonStyle.Link),
-		]);
-
-		interaction.reply({ embeds: [embed], components: [buttons], ephemeral: true });
+		interaction.reply({ embeds: [embed], ephemeral: true });
 	},
 };
