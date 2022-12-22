@@ -1,8 +1,22 @@
-const { Events } = require('discord.js');
+const { Events, InteractionType } = require('discord.js');
+const rulesHandler = require('../interactions/rulesHandler');
 
 module.exports = {
 	name: Events.InteractionCreate,
 	async execute(interaction) {
+		if (interaction.type === InteractionType.MessageComponent) {
+			try {
+				if (interaction.customId === 'rules_button')
+					return rulesHandler.handleInteraction(interaction);
+			} catch (error) {
+				console.error(error);
+				await interaction.reply({
+					content: 'There was an error while responding to this interaction.',
+					ephemeral: true,
+				});
+			}
+		}
+
 		if (!interaction.isChatInputCommand()) return console.log(interaction);
 
 		const command = interaction.client.commands.get(interaction.commandName);
