@@ -23,9 +23,9 @@ const embeds = [
 	new EmbedBuilder()
 		.setTitle("And that's everything!")
 		.setDescription(
-			'You should now be up to speed on the most important aspects of our server. If you have more questions, check our <#1055443176707588177> or open a support ticket.'
+			'You should now be up to speed on the most important aspects of our server. If you have more questions, check our <#1055443176707588177>.'
 		)
-		.setColor('2F3136'),
+		.setColor('5865f2'),
 ];
 
 module.exports = {
