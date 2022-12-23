@@ -1,5 +1,6 @@
 const { Events, InteractionType } = require('discord.js');
 const guideHandler = require('../interactions/guideHandler');
+const rolesHandler = require('../interactions/rolesHandler');
 const rulesHandler = require('../interactions/rulesHandler');
 
 module.exports = {
@@ -11,6 +12,8 @@ module.exports = {
 					return rulesHandler.handleInteraction(interaction);
 				if (interaction.customId.startsWith('get_started'))
 					return guideHandler.handleInteraction(interaction);
+				if (interaction.customId.startsWith('roles_menu'))
+					return rolesHandler.handleInteraction(interaction);
 			} catch (error) {
 				console.error(error);
 				await interaction.reply({
