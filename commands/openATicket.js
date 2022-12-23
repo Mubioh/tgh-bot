@@ -19,13 +19,13 @@ module.exports = {
 
 		const embed = new EmbedBuilder()
 			.setTitle('📩 Submit a Ticket')
-			.setDescription('Please select a ticket type from the dropdown menu below.')
+			.setDescription('Select a ticket type from the options in the menu down below.')
 			.setColor('2F3136');
 
 		const menu = new ActionRowBuilder().addComponents([
 			new StringSelectMenuBuilder()
-				.setCustomId('roles-select')
-				.setPlaceholder('No roles selected')
+				.setCustomId('ticket_type')
+				.setPlaceholder('Select a ticket type...')
 				.setMinValues(0)
 				.setMaxValues(3)
 				.addOptions([
