@@ -12,9 +12,7 @@ module.exports = {
 		.setName('ticket')
 		.setDescription('Sends the ticket channel embed.'),
 	async execute(interaction) {
-		const channel = interaction.guild.channels.cache.find(
-			(ch) => ch.id === openATicketChannnelId
-		);
+		const channel = interaction.guild.channels.cache.find((ch) => ch.id === openATicketChannnelId);
 		if (!channel) return console.log('Oops. The ticket channel could not be found.');
 
 		const embed = new EmbedBuilder()
