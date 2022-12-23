@@ -18,14 +18,14 @@ module.exports = {
 		if (!channel) return console.log('Oops. The ticket channel could not be found.');
 
 		const embed = new EmbedBuilder()
-			.setTitle('📩 Submit a Ticket')
+			.setTitle('Submit a Ticket')
 			.setDescription('Select a ticket type from the options in the menu down below.')
 			.setColor('2F3136');
 
 		const menu = new ActionRowBuilder().addComponents([
 			new StringSelectMenuBuilder()
 				.setCustomId('ticket_type')
-				.setPlaceholder('Select a ticket type...')
+				.setPlaceholder('Select a ticket type')
 				.setMinValues(0)
 				.setMaxValues(3)
 				.addOptions([
