@@ -19,7 +19,10 @@ const embeds = [
 			'📅 <#1055439884388663306>\nCatch up on our past news and updates!\n\n📝 <#1055566827201253497>\nYour place to share something about yourself or learn more about others.\n\n🎞️ <#1055571373646426213>\nShare some of your best moments with our community.'
 		)
 		.setColor('2F3136'),
-	new EmbedBuilder().setTitle('... (3/3)').setDescription('This is embed 2').setColor('2F3136'),
+	new EmbedBuilder()
+		.setTitle('Honks and Weekly Skirmish (3/3)')
+		.setDescription('🦆 **Honks**\nHonks are our currency, like raffle tickets – the more you have, the more likely you will win our monthly giveaway. You can earn honks by taking part in and winning events like our Weekly Skirmish.\n\n⚔️ **Weekly Skirmish**\nWe run a weekly skirmish every week of the year. The tournaments are split into Iron to Plat and Diamond to Radiant groups. We also have anti-smurf detection to ensure you are playing with people of a similar skill level.\n\nYou can learn more about the Weekly Skirmish in <#1055443176707588177>.')
+		.setColor('2F3136'),
 	new EmbedBuilder()
 		.setTitle("And that's everything!")
 		.setDescription(
@@ -60,6 +63,7 @@ module.exports = {
 							.setCustomId(`get_started_previous_${nextPage}`)
 							.setLabel('Previous Page')
 							.setStyle(ButtonStyle.Secondary)
+							.setDisabled(nextPage - 1 == 1 || 0 ? true : false)
 					);
 					if (nextPage == embeds.length - 1) {
 						row.addComponents(
@@ -87,7 +91,7 @@ module.exports = {
 							.setCustomId(`get_started_previous_${nextPage}`)
 							.setLabel('Previous Page')
 							.setStyle(ButtonStyle.Secondary)
-							.setDisabled(nextPage == 1),
+							.setDisabled(nextPage - 1 == 1 || 0 ? true : false),
 						new ButtonBuilder()
 							.setCustomId(`get_started_next_${nextPage}`)
 							.setLabel('Next Page')
