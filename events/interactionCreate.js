@@ -14,6 +14,8 @@ module.exports = {
 					return guideHandler.handleInteraction(interaction);
 				if (interaction.customId.startsWith('roles_menu'))
 					return rolesHandler.handleInteraction(interaction);
+				if (interaction.customId.startsWith('roles_select'))
+					return rolesHandler.handleSelectMenu(interaction);
 			} catch (error) {
 				console.error(error);
 				await interaction.reply({
