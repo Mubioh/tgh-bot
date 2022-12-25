@@ -16,7 +16,7 @@ const embeds = [
 	new EmbedBuilder()
 		.setTitle('Key Channels (2/3)')
 		.setDescription(
-			'📅 <#1055439884388663306>\nCatch up on our past news and updates!\n\n📝 <#1055566827201253497>\nYour place to share something about yourself or learn more about others.\n\n🎞️ <#1055571373646426213>\nShare some of your best moments with our community.'
+			'📅 <#1055439884388663306>\nCatch up on our past news and updates!\n\n📝 <#1056554955105910825>\nYour place to share something about yourself or learn more about others.\n\n🎞️ <#1056555078175166484>\nShare some of your best moments with our community.'
 		)
 		.setColor('2F3136'),
 	new EmbedBuilder()
