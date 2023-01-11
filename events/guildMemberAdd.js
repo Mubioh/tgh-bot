@@ -1,13 +1,37 @@
-const { Events } = require('discord.js');
+const {
+	Events,
+	EmbedBuilder,
+	ActionRowBuilder,
+	ButtonBuilder,
+	ButtonStyle,
+} = require('discord.js');
 
-// Add the role IDs you want to give to new members here. Example: ['123', '123', '123'].
-const joinRoleIds = ['1055447764596707349'];
+const { channels } = require('../configuration/variables.json');
+const { informationButtons, verifyEmbed } = require('../configuration/messages.json');
+
+const welcomeChannelId = channels.welcomeChannelId;
 
 module.exports = {
 	name: Events.GuildMemberAdd,
 	async execute(member) {
-		for (const id of joinRoleIds) {
-			if (member.guild.roles.cache.find((roles) => roles.id === id)) member.roles.add(id);
-		}
+		const channel = member.guild.channels.cache.find((ch) => ch.id === welcomeChannelId);
+
+		const embed = new EmbedBuilder()
+			.setTitle(verifyEmbed.title)
+			.setDescription(verifyEmbed.body)
+			.setColor('2F3136');
+
+		const buttons = new ActionRowBuilder().addComponents([
+			new ButtonBuilder()
+				.setCustomId('rules_button')
+				.setLabel(informationButtons.server_guidelines)
+				.setStyle(ButtonStyle.Secondary),
+			new ButtonBuilder()
+				.setCustomId(`verify_button_${member.user.id}`)
+				.setLabel('Verify')
+				.setStyle(ButtonStyle.Success),
+		]);
+
+		await channel.send({ content: `<@${member.user.id}>`, embeds: [embed], components: [buttons] });
 	},
 };
