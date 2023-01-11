@@ -1,0 +1,67 @@
+{
+    "verifyEmbed": {
+        "title": "**A wild adventurer has joined our guild!**",
+        "body": "It's great to have you here. Read our rules below and verify to enter the server."
+    },
+    "verifySuccess": {
+        "body": "You have been verified. Welcome to The Goose House!"
+    },
+    "informationEmbed": {
+        "title": "Welcome to The Goose House!",
+        "url": "https://thegoose.house/",
+        "body": "The Goose House began as a community of esports industry professionals looking to network and game together. Since then, it has expanded, allowing passionate gamers and esports fans to come together and connect.\n\n**We are the #1 European VALORANT Community, supported directly by RIOT.**"
+    },
+    "guideEmeds": {
+        "1": {
+            "title": "Getting Started in Goose House",
+            "body": "As a new community member, you may run into things you don’t understand. To help you get started, we created this guide to lead you through everything."
+        },
+        "2": {
+            "title": "Community Roles (1/3)",
+            "body": "🚨 <@&1055566420819320863>\nOur dedicated team is here to maintain a friendly space for everyone.\n\n⭐ <@&1055566447922913371>\nGiven to people who are veterans in our community. \n\n**Game, Notification, and other Community Roles**\nThese roles are self-assigned through the Customise Profile button above."
+        },
+        "3": {
+            "title": "Key Channels (2/3)",
+            "body": "📅 <#1055439884388663306>\nCatch up on our past news and updates!\n\n📝 <#1056554955105910825>\nYour place to share something about yourself or learn more about others.\n\n🎞️ <#1056555078175166484>\nShare some of your best moments with our community."
+        },
+        "4": {
+            "title": "Honks and Weekly Skirmish (3/3)",
+            "body": "🦆 **Honks**\nHonks are our currency, like raffle tickets – the more you have, the more likely you will win our monthly giveaway. You can earn honks by taking part in and winning events like our Weekly Skirmish.\n\n⚔️ **Weekly Skirmish**\nWe run a weekly skirmish every week of the year. The tournaments are split into Iron to Plat and Diamond to Radiant groups. We also have anti-smurf detection to ensure you are playing with people of a similar skill level.\n\nYou can learn more about the Weekly Skirmish in <#1055443176707588177>."
+        },
+        "5": {
+            "title": "And that's everything!",
+            "body": "You should now be up to speed on the most important aspects of our server. If you have more questions, check our <#1055443176707588177>."
+        }
+    },
+    "roleEmbeds": {
+        "1": {
+            "title": "Customise Profile",
+            "body": "You can click on the role-categories below to spruce up your profile and help us better understand who you are."
+        },
+        "2": {
+            "title": "Tournament Roles",
+            "body": "Tournament Roles Embed Description. You can select multiple tournaments."
+        },
+        "3": {
+            "title": "Rank Roles",
+            "body": "Rank Roles Embed Description. You can only select one rank at a time."
+        },
+        "4": {
+            "title": "Game Roles",
+            "body": "Game Roles Embed Description. You can select multiple games that interest you."
+        }
+    },
+    "informationButtons": {
+        "server_guidelines": "Server Guidelines",
+        "get_started": "Get Started in Goose House",
+        "customise_profile": "Customise Profile"
+    },
+    "roleButtons": {
+        "goose_house_tournaments": "Goose House Tournaments",
+        "valorant_ranks": "VALORANT Ranks",
+        "other_games": "Other Games"
+    },
+    "ruleEmbed": {
+        "body": "**You must be at least 16 years old:**\nThis is an age-restricted server to ensure the safety of everyone in our community.\n\n**You must be respectful: **\nYou should respect all members regardless of ethnicity, gender, sexual orientation, or beliefs. Harassment and hate speech will not be tolerated. Political topics should also be avoided.\n\n**You must keep profiles appropriate: **\nYour username, nickname, avatar, and custom status must be appropriate. This includes zalgo, blank usernames, slurs, or other offensive material.\n\n**You must ask before messaging a server member: **\nPlease do not contact server members unsolicited. This includes Twitch Partners and Industry members. Do not ping staff unless you have a reason.\n\n**You must respect the TOS of other platforms: **\nYou should respect the rules of Discord and game publishers and continue to abide by them here. For example, no discussion of account sharing or boosting."
+    }
+}
