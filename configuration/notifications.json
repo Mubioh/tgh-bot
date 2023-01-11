@@ -1,0 +1,17 @@
+{
+    "twitch": {
+        "auth": {
+            "clientId": "",
+            "clientSecret": ""
+        },
+        "users": [],
+        "channel": ""
+    },
+    "twitter": {
+        "auth": {
+            "bearer_token": ""
+        },
+        "user": "",
+        "channel": ""
+    }
+}
