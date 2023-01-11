@@ -5,8 +5,10 @@ const {
 	ButtonBuilder,
 	ButtonStyle,
 } = require('discord.js');
+const { informationEmbed, informationButtons } = require('../configuration/messages.json');
+const { channels } = require('../configuration/variables.json');
 
-const informationChannelId = '1055439851413045309';
+const informationChannelId = channels.informationChannelId;
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -17,25 +19,23 @@ module.exports = {
 		if (!channel) return console.log('Oops. The information channel could not be found.');
 
 		const embed = new EmbedBuilder()
-			.setTitle('Welcome to The Goose House!')
-			.setURL('https://thegoose.house/')
-			.setDescription(
-				'The Goose House began as a community of esports industry professionals looking to network and game together. Since then, it has expanded, allowing passionate gamers and esports fans to come together and connect.\n\n**We are the #1 European VALORANT Community, supported directly by RIOT.**'
-			)
+			.setTitle(informationEmbed.title)
+			.setURL(informationEmbed.url)
+			.setDescription(informationEmbed.body)
 			.setColor('2F3136');
 
 		const buttons = new ActionRowBuilder().addComponents([
 			new ButtonBuilder()
 				.setCustomId('rules_button')
-				.setLabel('Server Guidelines')
+				.setLabel(informationButtons.server_guidelines)
 				.setStyle(ButtonStyle.Primary),
 			new ButtonBuilder()
 				.setCustomId('get_started_button')
-				.setLabel('Get Started in Goose House')
+				.setLabel(informationButtons.get_started)
 				.setStyle(ButtonStyle.Secondary),
 			new ButtonBuilder()
 				.setCustomId('roles_menu_button')
-				.setLabel('Customise Profile')
+				.setLabel(informationButtons.customise_profile)
 				.setStyle(ButtonStyle.Secondary),
 		]);
 
