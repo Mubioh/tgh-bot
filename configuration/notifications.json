@@ -1,17 +1,17 @@
 {
     "twitch": {
         "auth": {
-            "clientId": "",
-            "clientSecret": ""
+            "clientId": "ruh0vztnzi66p3dfgavh1tj1uggf6",
+            "clientSecret": "3h92n08h5nb1a7dt0686fch1r2gko"
         },
-        "users": [],
-        "channel": ""
+        "users": ["mubioh"],
+        "channel": "1055441903820226630"
     },
     "twitter": {
         "auth": {
-            "bearer_token": ""
+            "bearer_token": "AAAAAAAAAAAAAAAAAAAAAIA%2BWgEAAAAAASBZ8Oa87y4Mlt1IuUxpgUGOWEk%3DTfrSxpWStFWP45lNwgMjNkDq3PDeKVBpNqPlGjb4LcxURYJAK"
         },
-        "user": "",
-        "channel": ""
+        "user": "2899773086",
+        "channel": "1055439970329968660"
     }
 }
