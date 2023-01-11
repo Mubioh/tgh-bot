@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, Collection, Partials } = require('discord.js');
 require('dotenv').config();
 
 const fs = require('node:fs');
@@ -9,10 +9,13 @@ const client = new Client({
 		GatewayIntentBits.Guilds,
 		GatewayIntentBits.GuildMembers,
 		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.GuildVoiceStates,
 	],
+	partials: [Partials.Channel, Partials.GuildMember, Partials.GuildMessages],
 });
 
 client.commands = new Collection();
+client.voiceManager = new Collection();
 
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter((file) => file.endsWith('.js'));
@@ -34,9 +37,9 @@ for (const file of eventFiles) {
 	const filePath = path.join(eventsPath, file);
 	const event = require(filePath);
 	if (event.once) {
-		client.once(event.name, (...args) => event.execute(...args));
+		client.once(event.name, (...args) => event.execute(...args, client));
 	} else {
-		client.on(event.name, (...args) => event.execute(...args));
+		client.on(event.name, (...args) => event.execute(...args, client));
 	}
 }
 
