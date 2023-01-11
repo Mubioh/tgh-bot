@@ -1,34 +1,27 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+const { guideEmeds } = require('../configuration/messages.json');
 
 const embeds = [
 	new EmbedBuilder()
-		.setTitle('Getting Started in Goose House')
-		.setDescription(
-			'As a new community member, you may run into things you don’t understand. To help you get started, we created this guide to lead you through everything.'
-		)
+		.setTitle(guideEmeds[1].title)
+		.setDescription(guideEmeds[1].body)
 		.setColor('2F3136'),
 	new EmbedBuilder()
-		.setTitle('Community Roles (1/3)')
-		.setDescription(
-			'🚨 <@&1055566420819320863>\nOur dedicated team is here to maintain a friendly space for everyone.\n\n⭐ <@&1055566447922913371>\nGiven to people who are veterans in our community. \n\n**Game, Notification, and other Community Roles**\nThese roles are self-assigned through the Customise Profile button above.'
-		)
+		.setTitle(guideEmeds[2].title)
+		.setDescription(guideEmeds[2].body)
 		.setColor('2F3136'),
 	new EmbedBuilder()
-		.setTitle('Key Channels (2/3)')
-		.setDescription(
-			'📅 <#1055439884388663306>\nCatch up on our past news and updates!\n\n📝 <#1056554955105910825>\nYour place to share something about yourself or learn more about others.\n\n🎞️ <#1056555078175166484>\nShare some of your best moments with our community.'
-		)
+		.setTitle(guideEmeds[3].title)
+		.setDescription(guideEmeds[3].body)
 		.setColor('2F3136'),
 	new EmbedBuilder()
-		.setTitle('Honks and Weekly Skirmish (3/3)')
-		.setDescription('🦆 **Honks**\nHonks are our currency, like raffle tickets – the more you have, the more likely you will win our monthly giveaway. You can earn honks by taking part in and winning events like our Weekly Skirmish.\n\n⚔️ **Weekly Skirmish**\nWe run a weekly skirmish every week of the year. The tournaments are split into Iron to Plat and Diamond to Radiant groups. We also have anti-smurf detection to ensure you are playing with people of a similar skill level.\n\nYou can learn more about the Weekly Skirmish in <#1055443176707588177>.')
+		.setTitle(guideEmeds[4].title)
+		.setDescription(guideEmeds[4].body)
 		.setColor('2F3136'),
 	new EmbedBuilder()
-		.setTitle("And that's everything!")
-		.setDescription(
-			'You should now be up to speed on the most important aspects of our server. If you have more questions, check our <#1055443176707588177>.'
-		)
-		.setColor('5865f2'),
+		.setTitle(guideEmeds[5].title)
+		.setDescription(guideEmeds[5].body)
+		.setColor('2F3136'),
 ];
 
 module.exports = {
