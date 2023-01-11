@@ -1,6 +1,7 @@
 const { Events, MessageType, ChannelType } = require('discord.js');
+const { channels } = require('../configuration/variables.json');
 
-const commentEnabledChannelIds = ['1055439884388663306'];
+const commentEnabledChannelIds = channels.commentEnabledChannelIds;
 
 module.exports = {
 	name: Events.MessageCreate,
