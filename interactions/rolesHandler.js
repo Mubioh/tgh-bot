@@ -3,30 +3,27 @@ const {
 	ActionRowBuilder,
 	ButtonBuilder,
 	ButtonStyle,
-	RoleSelectMenuBuilder,
 	StringSelectMenuBuilder,
 } = require('discord.js');
+const { roleEmbeds, roleButtons } = require('../configuration/messages.json');
+const { roles, emojis } = require('../configuration/variables.json');
 
 const embeds = [
 	new EmbedBuilder()
-		.setTitle('Customise Profile')
-		.setDescription(
-			'You can click on the role-categories below to spruce up your profile and help us better understand who you are.'
-		)
+		.setTitle(roleEmbeds[1].title)
+		.setDescription(roleEmbeds[1].body)
 		.setColor('2F3136'),
 	new EmbedBuilder()
-		.setTitle('Tournament Roles')
-		.setDescription('Tournament Roles Embed Description. You can select multiple tournaments.')
+		.setTitle(roleEmbeds[2].title)
+		.setDescription(roleEmbeds[2].body)
 		.setColor('2F3136'),
 	new EmbedBuilder()
-		.setTitle('Rank Roles')
-		.setDescription('Rank Roles Embed Description. You can only select one rank at a time.')
+		.setTitle(roleEmbeds[3].title)
+		.setDescription(roleEmbeds[3].body)
 		.setColor('2F3136'),
 	new EmbedBuilder()
-		.setTitle('Game Roles')
-		.setDescription(
-			'Game Roles Embed Description. You can select multiple games that interest you.'
-		)
+		.setTitle(roleEmbeds[4].title)
+		.setDescription(roleEmbeds[4].body)
 		.setColor('2F3136'),
 ];
 
@@ -43,23 +40,23 @@ module.exports = {
 			return role.members.size;
 		}
 
-		const roleButtons = new ActionRowBuilder()
+		const rButtons = new ActionRowBuilder()
 			.addComponents(
 				new ButtonBuilder()
 					.setCustomId(`roles_menu_tournament`)
-					.setLabel('Goose House Tournaments')
+					.setLabel(roleButtons.goose_house_tournaments)
 					.setStyle(ButtonStyle.Secondary)
 			)
 			.addComponents(
 				new ButtonBuilder()
 					.setCustomId(`roles_menu_rank`)
-					.setLabel('VALORANT Ranks')
+					.setLabel(roleButtons.valorant_ranks)
 					.setStyle(ButtonStyle.Secondary)
 			)
 			.addComponents(
 				new ButtonBuilder()
 					.setCustomId(`roles_menu_games`)
-					.setLabel('Other Video Games')
+					.setLabel(roleButtons.other_games)
 					.setStyle(ButtonStyle.Secondary)
 			);
 
@@ -76,7 +73,7 @@ module.exports = {
 			case 'button':
 				await interaction.reply({
 					embeds: [embeds[0]],
-					components: [roleButtons],
+					components: [rButtons],
 					ephemeral: true,
 				});
 				break;
@@ -90,15 +87,16 @@ module.exports = {
 						.addOptions([
 							{
 								label: 'Birds of Prey',
-								value: '1056558695502336060',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056558695502336060'),
+								value: roles.roleIds.tournament.birds_of_prey,
+								default: hasRole(
+									interaction.member,
+									roles.roleIds.tournament.birds_of_prey
+								),
 							},
 							{
 								label: 'BEACON',
-								value: '1056558702758469694',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056558702758469694'),
+								value: roles.roleIds.tournament.beacon,
+								default: hasRole(interaction.member, roles.roleIds.tournament.beacon),
 							},
 						])
 				);
@@ -117,84 +115,84 @@ module.exports = {
 						.addOptions([
 							{
 								label: 'Iron',
-								value: '1055950128382488638',
+								value: roles.roleIds.ranks.iron,
 								description: `There are ${hasRoleInt(
-									'1055950128382488638'
+									roles.roleIds.ranks.iron
 								)} people with Iron rank.`,
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1055950128382488638'),
+								emoji: emojis.iron,
+								default: hasRole(interaction.member, roles.roleIds.ranks.iron),
 							},
 							{
 								label: 'Bronze',
-								value: '1056556092953473104',
+								value: roles.roleIds.ranks.bronze,
 								description: `There are ${hasRoleInt(
-									'1056556092953473104'
+									roles.roleIds.ranks.bronze
 								)} people with Bronze rank.`,
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056556092953473104'),
+								emoji: emojis.bronze,
+								default: hasRole(interaction.member, roles.roleIds.ranks.bronze),
 							},
 							{
 								label: 'Silver',
-								value: '1056556099962163222',
+								value: roles.roleIds.ranks.silver,
 								description: `There are ${hasRoleInt(
-									'1056556099962163222'
+									roles.roleIds.ranks.silver
 								)} people with Silver rank.`,
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056556099962163222'),
+								emoji: emojis.silver,
+								default: hasRole(interaction.member, roles.roleIds.ranks.silver),
 							},
 							{
 								label: 'Gold',
-								value: '1056556134569353247',
+								value: roles.roleIds.ranks.gold,
 								description: `There are ${hasRoleInt(
-									'1056556134569353247'
+									roles.roleIds.ranks.gold
 								)} people with Gold rank.`,
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056556134569353247'),
+								emoji: emojis.gold,
+								default: hasRole(interaction.member, roles.roleIds.ranks.gold),
 							},
 							{
 								label: 'Platinum',
-								value: '1056556143125737512',
+								value: roles.roleIds.ranks.platinum,
 								description: `There are ${hasRoleInt(
-									'1056556143125737512'
+									roles.roleIds.ranks.platinum
 								)} people with Platinum rank.`,
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056556143125737512'),
+								emoji: emojis.platinum,
+								default: hasRole(interaction.member, roles.roleIds.ranks.platinum),
 							},
 							{
 								label: 'Diamond',
-								value: '1056556148871921724',
+								value: roles.roleIds.ranks.diamond,
 								description: `There are ${hasRoleInt(
-									'1056556148871921724'
+									roles.roleIds.ranks.diamond
 								)} people with Diamond rank.`,
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056556148871921724'),
+								emoji: emojis.diamond,
+								default: hasRole(interaction.member, roles.roleIds.ranks.diamond),
 							},
 							{
 								label: 'Ascendant',
-								value: '1056556166324441170',
+								value: roles.roleIds.ranks.ascendant,
 								description: `There are ${hasRoleInt(
-									'1056556166324441170'
+									roles.roleIds.ranks.ascendant
 								)} people with Ascendant rank.`,
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056556166324441170'),
+								emoji: emojis.ascendant,
+								default: hasRole(interaction.member, roles.roleIds.ranks.ascendant),
 							},
 							{
 								label: 'Immortal',
-								value: '1056556169579204669',
+								value: roles.roleIds.ranks.immortal,
 								description: `There are ${hasRoleInt(
-									'1056556169579204669'
+									roles.roleIds.ranks.immortal
 								)} people with Immortal rank.`,
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056556169579204669'),
+								emoji: emojis.immortal,
+								default: hasRole(interaction.member, roles.roleIds.ranks.immortal),
 							},
 							{
 								label: 'Radiant',
-								value: '1056556176277512232',
+								value: roles.roleIds.ranks.radiant,
 								description: `There are ${hasRoleInt(
-									'1056556176277512232'
+									roles.roleIds.ranks.radiant
 								)} people with Radiant rank.`,
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056556176277512232'),
+								emoji: emojis.radiant,
+								default: hasRole(interaction.member, roles.roleIds.ranks.radiant),
 							},
 						])
 				);
@@ -213,69 +211,72 @@ module.exports = {
 						.addOptions([
 							{
 								label: 'CS:GO',
-								value: '1056560465699946548',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056560465699946548'),
+								value: roles.roleIds.games.csgo,
+								emoji: emojis.csgo,
+								default: hasRole(interaction.member, roles.roleIds.games.csgo),
 							},
 							{
 								label: 'Apex Legends',
-								value: '1056560501963890708',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056560501963890708'),
+								value: roles.roleIds.games.apex_legends,
+								emoji: emojis.apex_legends,
+								default: hasRole(interaction.member, roles.roleIds.games.apex_legends),
 							},
 							{
 								label: 'Formula 1',
-								value: '1056560507525533756',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056560507525533756'),
+								value: roles.roleIds.games.formula_one,
+								emoji: emojis.formula_one,
+								default: hasRole(interaction.member, roles.roleIds.games.formula_one),
 							},
 							{
 								label: 'Rocket League',
-								value: '1056560511690489896',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056560511690489896'),
+								value: roles.roleIds.games.rocket_league,
+								emoji: emojis.rocket_league,
+								default: hasRole(interaction.member, roles.roleIds.games.rocket_league),
 							},
 							{
 								label: 'Call of Duty',
-								value: '1056560516350349386',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056560516350349386'),
+								value: roles.roleIds.games.call_of_duty,
+								emoji: emojis.call_of_duty,
+								default: hasRole(interaction.member, roles.roleIds.games.call_of_duty),
 							},
 							{
 								label: 'Minecraft',
-								value: '1056560520204922880',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056560520204922880'),
+								value: roles.roleIds.games.minecraft,
+								emoji: emojis.minecraft,
+								default: hasRole(interaction.member, roles.roleIds.games.minecraft),
 							},
 							{
 								label: 'League of Legends',
-								value: '1056560525418434620',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056560525418434620'),
+								value: roles.roleIds.games.league_of_legends,
+								emoji: emojis.league_of_legends,
+								default: hasRole(interaction.member, roles.roleIds.games.league_of_legends),
 							},
 							{
 								label: 'Fortnite',
-								value: '1056560530137022585',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056560530137022585'),
+								value: roles.roleIds.games.fortnite,
+								emoji: emojis.fortnite,
+								default: hasRole(interaction.member, roles.roleIds.games.fortnite),
 							},
 							{
 								label: 'Escape From Tarkov',
-								value: '1056560533282762832',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056560533282762832'),
+								value: roles.roleIds.games.escape_from_tarkov,
+								emoji: emojis.escape_from_tarkov,
+								default: hasRole(
+									interaction.member,
+									roles.roleIds.games.escape_from_tarkov
+								),
 							},
 							{
 								label: 'Rust',
-								value: '1056560536042623107',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056560536042623107'),
+								value: roles.roleIds.games.rust,
+								emoji: emojis.rust,
+								default: hasRole(interaction.member, roles.roleIds.games.rust),
 							},
 							{
 								label: 'Overwatch',
-								value: '1056560538609537105',
-								emoji: '🔹',
-								default: hasRole(interaction.member, '1056560538609537105'),
+								value: roles.roleIds.games.overwatch,
+								emoji: emojis.overwatch,
+								default: hasRole(interaction.member, roles.roleIds.games.overwatch),
 							},
 						])
 				);
@@ -287,7 +288,7 @@ module.exports = {
 			case 'back':
 				await interaction.update({
 					embeds: [embeds[0]],
-					components: [roleButtons],
+					components: [rButtons],
 				});
 				break;
 		}
