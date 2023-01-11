@@ -19,8 +19,8 @@ module.exports = {
 			console.error(error);
 		}
 
-		// twitchListener(client);
-		// twitterListener(client);
+		twitchListener(client);
+		twitterListener(client);
 
 		console.log(`Ready! Logged in as ${client.user.tag} (${client.user.id})`);
 	},
