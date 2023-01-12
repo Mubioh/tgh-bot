@@ -1,11 +1,4 @@
 {
-    "verifyEmbed": {
-        "title": "**A wild adventurer has joined our guild!**",
-        "body": "It's great to have you here. Read our rules below and verify to enter the server."
-    },
-    "verifySuccess": {
-        "body": "You have been verified. Welcome to The Goose House!"
-    },
     "informationEmbed": {
         "title": "Welcome to The Goose House!",
         "url": "https://thegoose.house/",
