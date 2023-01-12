@@ -1,6 +1,4 @@
 const { Events, REST, Routes } = require('discord.js');
-const twitchListener = require('../handlers/twitchListener');
-const twitterListener = require('../handlers/twitterListener');
 
 module.exports = {
 	name: Events.ClientReady,
@@ -18,9 +16,6 @@ module.exports = {
 		} catch (error) {
 			console.error(error);
 		}
-
-		twitchListener(client);
-		twitterListener(client);
 
 		console.log(`Ready! Logged in as ${client.user.tag} (${client.user.id})`);
 	},
