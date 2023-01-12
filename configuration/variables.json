@@ -1,8 +1,5 @@
 {
     "roles": {
-        "joinRoleIds": [
-            "1055447764596707349"
-        ],
         "roleIds": {
             "tournament": {
                 "birds_of_prey": "1056558695502336060",
@@ -59,7 +56,6 @@
         "overwatch": "<:overwatch:1027274786411401317>"
     },
     "channels": {
-        "welcomeChannelId": "1062787752594264127",
         "informationChannelId": "1055439851413045309",
         "commentEnabledChannelIds": [
             "1055439884388663306",
