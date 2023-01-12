@@ -2,7 +2,6 @@ const { Events, InteractionType } = require('discord.js');
 const guideHandler = require('../interactions/guideHandler');
 const rolesHandler = require('../interactions/rolesHandler');
 const rulesHandler = require('../interactions/rulesHandler');
-const verifyHandler = require('../interactions/verifyHandler');
 
 module.exports = {
 	name: Events.InteractionCreate,
@@ -11,8 +10,6 @@ module.exports = {
 			try {
 				if (interaction.customId === 'rules_button')
 					return rulesHandler.handleInteraction(interaction);
-				if (interaction.customId.startsWith('verify_button'))
-					return verifyHandler.handleInteraction(interaction);
 				if (interaction.customId.startsWith('get_started'))
 					return guideHandler.handleInteraction(interaction);
 				if (interaction.customId.startsWith('roles_menu'))
